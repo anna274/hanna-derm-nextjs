@@ -4,3 +4,8 @@ export interface IService {
   image: string;
   description: string;
 }
+
+export interface IUser {
+  email: string;
+  role: string;
+}
