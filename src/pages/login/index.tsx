@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
 import { Button } from 'components';
@@ -22,6 +22,12 @@ const Login = () => {
       alert(res?.error);
     }
   };
+
+  useEffect(() => {
+    // Prefetch the dashboard page
+    router.prefetch('/dashboard');
+  }, []);
+
   return (
     <>
       <PageTitle>Login</PageTitle>

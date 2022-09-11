@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 import { Container, Navigation, NavigationLink } from './styled';
@@ -10,6 +11,11 @@ const getNavigationLinks = ({ session }: { session: any }) => {
       to: '/',
       label: 'Home',
       condition: true,
+    },
+    {
+      to: '/old-page',
+      label: 'Old page',
+      condition: session.status !== 'authenticated',
     },
     {
       to: '/services',
@@ -47,6 +53,9 @@ export const Layout = ({
   const session = useSession();
   return (
     <Container>
+      <Head>
+        <title>Center of Esthetic medicine</title>
+      </Head>
       <Navigation>
         {getNavigationLinks({ session }).map(({ to, label }) => (
           <Link key={label} href={to}>

@@ -34,7 +34,7 @@ const Services = ({ services }: { services: IService[] }) => {
       </PageDescription>
       <ServicesContainer>
         {services.map(({ image, name, id }) => (
-          <Link href={`/services/${id}`} key={id}>
+          <Link href={`/services/${id}`} key={id} passHref>
             <a>
               <ServiceCard>
                 <ServiceImageContainer>

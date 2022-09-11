@@ -1,6 +1,19 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+interface ErrorResponse {
+  message: string;
+}
+
+interface SuccessResponse {
+  id: string;
+  name: string;
+  role: 'admin' | 'manager';
+}
+
+const handler = (
+  req: NextApiRequest,
+  res: NextApiResponse<ErrorResponse | SuccessResponse>
+) => {
   if (req.method !== 'POST') {
     res.status(404).send({ message: 'Route not found' });
   }

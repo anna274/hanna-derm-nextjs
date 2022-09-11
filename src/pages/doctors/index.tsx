@@ -15,7 +15,7 @@ import {
 const Doctors = () => {
   const [doctors, setDoctors] = useState<IDoctor[]>([]);
   useEffect(() => {
-    fetch('http://localhost:8000/doctors')
+    fetch(`${process.env.backendBaseUrl}/doctors`)
       .then((res) => res.json())
       .then((data) => {
         setDoctors(data);
