@@ -1,6 +1,5 @@
 import { unstable_getServerSession } from 'next-auth';
 import { GetServerSidePropsContext } from 'next';
-import { Layout } from 'components/Layout';
 import { PageTitle } from 'styled/services';
 import Permission from 'pages/permission';
 import { authOptions } from 'pages/api/auth/[...nextauth]';
@@ -22,11 +21,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 const Admin = (props: { user: IUser }) => {
   if (props?.user?.role === 'admin') {
-    return (
-      <Layout>
-        <PageTitle>Hello, Admin</PageTitle>
-      </Layout>
-    );
+    return <PageTitle>Hello, Admin</PageTitle>;
   }
   return <Permission />;
 };

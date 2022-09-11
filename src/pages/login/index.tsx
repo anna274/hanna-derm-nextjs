@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
-import { Layout, Button } from 'components';
+import { Button } from 'components';
 import { Container, FromInput, PageTitle } from 'styled/login';
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
     }
   };
   return (
-    <Layout>
+    <>
       <PageTitle>Login</PageTitle>
       <Container>
         <FromInput
@@ -40,7 +40,7 @@ const Login = () => {
         />
         <Button onClick={onSubmit}>Login</Button>
       </Container>
-    </Layout>
+    </>
   );
 };
 

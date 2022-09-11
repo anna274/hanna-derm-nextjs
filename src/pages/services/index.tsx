@@ -1,4 +1,3 @@
-import { Layout } from 'components/Layout';
 import { IService } from 'declarations/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -24,7 +23,7 @@ export async function getStaticProps() {
 
 const Services = ({ services }: { services: IService[] }) => {
   return (
-    <Layout>
+    <>
       <PageTitle>Our Services</PageTitle>
       <PageDescription>
         Behind sooner dining so window excuse he summer. Breakfast met certainty
@@ -57,7 +56,7 @@ const Services = ({ services }: { services: IService[] }) => {
           </Link>
         ))}
       </ServicesContainer>
-    </Layout>
+    </>
   );
 };
 

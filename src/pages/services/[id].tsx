@@ -1,4 +1,3 @@
-import { Layout } from 'components/Layout';
 import { IService } from 'declarations/types';
 import { PageTitle, PageDescription } from 'styled/services';
 
@@ -44,10 +43,10 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
 
 const Services = ({ service }: { service: IService }) => {
   return (
-    <Layout>
+    <>
       <PageTitle>{service.name}</PageTitle>
       <PageDescription>{service.description}</PageDescription>
-    </Layout>
+    </>
   );
 };
 

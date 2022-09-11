@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Layout } from 'components/Layout';
 import { IDoctor } from 'declarations/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -23,14 +22,10 @@ const Doctors = () => {
       });
   }, []);
   if (doctors.length === 0) {
-    return (
-      <Layout>
-        <PageDescription>Loading...</PageDescription>
-      </Layout>
-    );
+    return <PageDescription>Loading...</PageDescription>;
   }
   return (
-    <Layout>
+    <>
       <PageTitle>Our Doctors</PageTitle>
       <PageDescription>
         Behind sooner dining so window excuse he summer. Breakfast met certainty
@@ -63,7 +58,7 @@ const Doctors = () => {
           </Link>
         ))}
       </ServicesContainer>
-    </Layout>
+    </>
   );
 };
 
